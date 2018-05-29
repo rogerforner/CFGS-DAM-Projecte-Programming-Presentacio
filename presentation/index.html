@@ -1,0 +1,233 @@
+<!doctype html>
+<html lang="ca">
+	<head>
+		<meta charset="utf-8">
+		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+
+		<title>Projecte DAM | Scool/Programming</title>
+		<meta name="description" content="Projecte - Cicle Formatiu de Grau Superior de Desenvolupament d'Aplicacions Multiplataforma (DAM)">
+		<meta name="author" content="Roger Forner Fabre">
+
+		<link rel="stylesheet" href="css/reveal.css">
+		<link rel="stylesheet" href="css/theme/black.css">
+		<link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
+
+		<!-- Theme used for syntax highlighting of code -->
+		<link rel="stylesheet" href="lib/css/zenburn.css">
+
+		<!-- Printing and PDF exports -->
+		<script>
+			var link = document.createElement( 'link' );
+			link.rel = 'stylesheet';
+			link.type = 'text/css';
+			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+			document.getElementsByTagName( 'head' )[0].appendChild( link );
+		</script>
+	</head>
+	<body>
+		<div class="reveal">
+			<div class="slides">
+				<!-- DIAPOSITIVA 1 -->
+				<section>
+					<h1><i class="fas fa-graduation-cap"></i><small>Scool/Programming</small></h1>
+					<h4>Cicle Formatiu de Grau Superior<br>(DAM)</h4>
+					<p><em>29 de maig de 2018, Institut de l'Ebre (Tortosa)</em></p>
+					<p><small>
+						<i class="fas fa-user-circle"></i> Per <a href="https://github.com/rogerforner" target="_blank">Roger Forner Fabre</a>
+					</small></p>
+				</section>
+
+				<!-- DIAPOSITIVA 2 -->
+				<section>
+					<h3>Taula de continguts</h3>
+					<ul style="list-style: none;">
+						<li>1. Introducció</li>
+						<li>2. Diagrama</li>
+						<li>3. Requisits i recursos emprats</li>
+						<li>4. El paquet</li>
+						<li>5. Aplicació Web</li>
+						<li>6. Conclusió</li>
+						<li>7. Bibliografia Web</li>
+					</ul>
+				</section>
+
+				<!-- DIAPOSITIVA 3 (1. Introducció) -->
+				<section>
+					<h3>1. Introducció</h3>
+					<p><strong>Scool/Programming</strong> es dirigeix  a Centres d'Educació de Formació Professional i té l'objectiu de proporcionar la funcionalitat necessària per poder dur endavant la gestió de les programacions dels Mòduls Professionals i, també, de les Unitats Formatives, <u>a qualsevol projecte Laravel</u></p>
+                          
+					<p>Sí, <em>"a qualsevol projecte Laravel"</em> doncs Scool/Programming és un paquet instal·lable mitjançançant composer i, per tant, el pots trobar al Packagist.</p>
+				</section>
+
+				<!-- DIAPOSITIVA 4 (2. Diagrama) -->
+				<section>
+					<h3>2. Diagrama</h3>
+					<img src="img/diagrama.png" alt="diagrama ER">
+				</section>
+
+				<!-- DIAPOSITIVA 5 (3. Requisits i recursos emprats) -->
+				<section>
+					<section>
+						<h3>3. Requisits i recursos emprats</h3>
+						<ul>
+							<li>Laravel 5.6</li>
+							<li>PHP >= 7.1</li>
+							<li>Composer</li>
+							<li>Packagist</li>
+							<li>npm</li>
+							<li>Git + GitHub</li>
+							<li>GitHub Pages</li>
+							<li>Sami</li>
+						</ul>
+					</section>
+					<section>
+						<p><small>3. Requisits i recursos emprats</small></p>
+						<ul>
+							<li>Laravel Passport</li>
+							<li>Laravel Socialite</li>
+							<li>Laravel Permission</li>
+							<li>DomPDF</li>
+							<li>Moment.js</li>
+						</ul>
+					</section>
+				</section>
+
+				<!-- DIAPOSITIVA 6 (4. El paquet) -->
+				<section>
+					<section>
+						<h3>4. El paquet</h3>
+					</section>
+					<section>
+						<p><small>4. El paquet</small></p>
+						<h1>API Routes</h1>
+					</section>
+					<section>
+						<p><small>4. El paquet<br>API Routes</small></p>
+						<p>Departments</p>
+						<pre><code data-trim data-noescape>
+							|        | GET|HEAD  | api/scool/programming/departments                                | departments.index            | Rogerforner\ScoolProgramming\Http\Controllers\API\DepartmentController@index           | auth:api     |
+							|        | POST      | api/scool/programming/departments                                | departments.store            | Rogerforner\ScoolProgramming\Http\Controllers\API\DepartmentController@store           | auth:api     |
+							|        | GET|HEAD  | api/scool/programming/departments/{department}                   | departments.show             | Rogerforner\ScoolProgramming\Http\Controllers\API\DepartmentController@show            | auth:api     |
+							|        | PUT|PATCH | api/scool/programming/departments/{department}                   | departments.update           | Rogerforner\ScoolProgramming\Http\Controllers\API\DepartmentController@update          | auth:api     |
+							|        | DELETE    | api/scool/programming/departments/{department}                   | departments.destroy          | Rogerforner\ScoolProgramming\Http\Controllers\API\DepartmentController@destroy         | auth:api     |
+						</code></pre>
+					</section>
+					<section>
+						<p><small>4. El paquet<br>API Routes</small></p>
+						<p>Professional Modules</p>
+						<pre><code data-trim data-noescape>
+							|        | GET|HEAD  | api/scool/programming/professional-modules                       | professional-modules.index   | Rogerforner\ScoolProgramming\Http\Controllers\API\ProfessionalModuleController@index   | auth:api     |
+							|        | POST      | api/scool/programming/professional-modules                       | professional-modules.store   | Rogerforner\ScoolProgramming\Http\Controllers\API\ProfessionalModuleController@store   | auth:api     |
+							|        | GET|HEAD  | api/scool/programming/professional-modules/{professional_module} | professional-modules.show    | Rogerforner\ScoolProgramming\Http\Controllers\API\ProfessionalModuleController@show    | auth:api     |
+							|        | PUT|PATCH | api/scool/programming/professional-modules/{professional_module} | professional-modules.update  | Rogerforner\ScoolProgramming\Http\Controllers\API\ProfessionalModuleController@update  | auth:api     |
+							|        | DELETE    | api/scool/programming/professional-modules/{professional_module} | professional-modules.destroy | Rogerforner\ScoolProgramming\Http\Controllers\API\ProfessionalModuleController@destroy | auth:api     |
+						</code></pre>
+					</section>
+					<section>
+						<p><small>4. El paquet<br>API Routes</small></p>
+						<p>Temaries</p>
+						<pre><code data-trim data-noescape>
+							|        | GET|HEAD  | api/scool/programming/temaries                                   | temaries.index               | Rogerforner\ScoolProgramming\Http\Controllers\API\TemaryController@index               | auth:api     |
+							|        | POST      | api/scool/programming/temaries                                   | temaries.store               | Rogerforner\ScoolProgramming\Http\Controllers\API\TemaryController@store               | auth:api     |
+							|        | DELETE    | api/scool/programming/temaries/{temary}                          | temaries.destroy             | Rogerforner\ScoolProgramming\Http\Controllers\API\TemaryController@destroy             | auth:api     |
+							|        | GET|HEAD  | api/scool/programming/temaries/{temary}                          | temaries.show                | Rogerforner\ScoolProgramming\Http\Controllers\API\TemaryController@show                | auth:api     |
+							|        | PUT|PATCH | api/scool/programming/temaries/{temary}                          | temaries.update              | Rogerforner\ScoolProgramming\Http\Controllers\API\TemaryController@update              | auth:api     |
+						</code></pre>
+					</section>
+					<section>
+						<p><small>4. El paquet<br>API Routes</small></p>
+						<p>Training Units</p>
+						<pre><code data-trim data-noescape>
+							|        | GET|HEAD  | api/scool/programming/training-units                             | training-units.index         | Rogerforner\ScoolProgramming\Http\Controllers\API\TrainingUnitController@index         | auth:api     |
+							|        | POST      | api/scool/programming/training-units                             | training-units.store         | Rogerforner\ScoolProgramming\Http\Controllers\API\TrainingUnitController@store         | auth:api     |
+							|        | DELETE    | api/scool/programming/training-units/{training_unit}             | training-units.destroy       | Rogerforner\ScoolProgramming\Http\Controllers\API\TrainingUnitController@destroy       | auth:api     |
+							|        | PUT|PATCH | api/scool/programming/training-units/{training_unit}             | training-units.update        | Rogerforner\ScoolProgramming\Http\Controllers\API\TrainingUnitController@update        | auth:api     |
+							|        | GET|HEAD  | api/scool/programming/training-units/{training_unit}             | training-units.show          | Rogerforner\ScoolProgramming\Http\Controllers\API\TrainingUnitController@show          | auth:api     |
+						</code></pre>
+					</section>
+					<section>
+						<p><small>4. El paquet<br>API Routes</small></p>
+						<p>Vue + Axios (consumir)</p>
+						<pre><code data-trim data-noescape>
+							indexDepartments: function() {
+								var url = '/api/scool/programming/departments?departments=' + this.pagination.current_page;
+								axios.get(url).then(response => {
+									this.index.departmentswp = response.data.apiResponseData.departmentswp.data;
+									this.index.departments   = response.data.apiResponseData.departments;
+									this.index.userAuth      = response.data.apiResponseData.userAuth;
+									this.pagination = response.data.apiResponseData.pagination;
+								});
+							},
+						</code></pre>
+					</section>
+					<section>
+						<p><small>4. El paquet</small></p>
+						<h1>Controladors i Models</h1>
+					</section>
+					<section>
+						<p><small>4. El paquet<br>Controladors i Models</small></p>
+						<p>Controladors</p>
+						<pre><code data-trim data-noescape>
+							namespace Rogerforner\ScoolProgramming\Http\Controllers\API;
+						</code></pre>
+
+						<p>Models</p>
+						<pre><code data-trim data-noescape>
+							namespace Rogerforner\ScoolProgramming\Models;
+						</code></pre>
+					</section>
+					<section>
+						<p><small>4. El paquet<br>ApiResponseController</small></p>
+						<img src="img/paquet.PNG" alt="ApiResponseController">
+					</section>
+				</section>
+
+				<!-- DIAPOSITIVA 7 (5. Aplicació Web) -->
+				<section>
+					<h3>5. Aplicació Web</h3>
+					<p><a href="http://rogerforner.com">Demostració</a></p>
+				</section>
+
+				<!-- DIAPOSITIVA 8 (6. Conclusió) -->
+				<section>
+					<h3>6. Conclusió</h3>
+				</section>
+
+				<!-- DIAPOSITIVA 9 (7. Bibliografia Web) -->
+				<section>
+					<h3>7. Bibliografia Web</h3>
+					<p><small>Relacionat amb el projecte</small></p>
+					<ul style="list-style: none;">
+						<li><a href="https://github.com/rogerforner/programming-package">programming-package (GitHub)</a></li>
+						<li><a href="https://packagist.org/packages/rogerforner/scool_programming">programming-package (Packagist)</a></li>
+						<li><a href="https://github.com/rogerforner/programming">programming demo (GitHub)</a></li>
+						<li><a href="https://github.com/rogerforner/programming-presentacio">programming presentació (GitHub)</a></li>
+					</ul>
+
+					<p><small>Consultes</small></p>
+					<ul style="list-style: none;">
+						<li><a href="https://laravel.com/docs/5.6">Laravel</a></li>
+						<li><a href="https://vuejs.org/">Vue.js</a></li>
+					</ul>
+				</section>
+			</div>
+		</div>
+
+		<script src="lib/js/head.min.js"></script>
+		<script src="js/reveal.js"></script>
+
+		<script>
+			// More info about config & dependencies:
+			// - https://github.com/hakimel/reveal.js#configuration
+			// - https://github.com/hakimel/reveal.js#dependencies
+			Reveal.initialize({
+				dependencies: [
+					{ src: 'plugin/markdown/marked.js' },
+					{ src: 'plugin/markdown/markdown.js' },
+					{ src: 'plugin/notes/notes.js', async: true },
+					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+				]
+			});
+		</script>
+	</body>
+</html>
