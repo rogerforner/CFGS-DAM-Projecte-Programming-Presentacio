@@ -6,8 +6,8 @@
 
 ## Enllaços d'interès
 
-- [Projecte de demostració](https://github.com/rogerforner/programming)
-- [Projecte final](https://github.com/rogerforner/programming-package)
+- [Projecte de demostració](https://github.com/rogerforner/CFGS-DAM-Projecte-Programming)
+- [Projecte final](https://github.com/rogerforner/CFGS-DAM-Projecte-Programming-Package)
 
 # Qui?
 
