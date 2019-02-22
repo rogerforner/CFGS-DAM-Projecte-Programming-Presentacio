@@ -9,6 +9,12 @@
 - [Projecte de demostració](https://github.com/rogerforner/CFGS-DAM-Projecte-Programming)
 - [Projecte final](https://github.com/rogerforner/CFGS-DAM-Projecte-Programming-Package)
 
+---
+
+- [Landing](https://rogerforner.github.io/CFGS-DAM-Projecte-Programming-Presentacio/)
+- [Veure la presentació](https://rogerforner.github.io/CFGS-DAM-Projecte-Programming-Presentacio/presentation/index.html)
+- [Veure la documentació (paquet)](https://rogerforner.github.io/CFGS-DAM-Projecte-Programming-Package/)
+
 # Qui?
 
 Alumne:
